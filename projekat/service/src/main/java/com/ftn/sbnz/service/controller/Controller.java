@@ -21,8 +21,8 @@ public class Controller {
     @Autowired
     private Service service;
 
-    @PostMapping(value="/configure", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<PhotoConfiguration> configure(@RequestBody PhotographyData photographyData) {
+    @PostMapping(value="/configure", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<PhotoConfiguration> handleConfigureRequest(@RequestBody PhotographyData photographyData) {
         PhotoConfiguration configuration = this.service.configure(photographyData);
         return new ResponseEntity<>(configuration, HttpStatus.OK);
     }
