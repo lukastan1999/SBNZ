@@ -15,7 +15,7 @@ import com.ftn.sbnz.service.service.Service;
 
 
 @RestController
-@RequestMapping(value = "/photography")
+@RequestMapping(value = "api/photography")
 public class Controller {
 
     @Autowired
