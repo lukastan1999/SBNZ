@@ -1,0 +1,263 @@
+package rules;
+
+import com.ftn.sbnz.model.PhotographyData;
+import com.ftn.sbnz.model.PhotoConfiguration;
+
+
+rule "Sunny_Macro_Static"
+    when
+        $data: PhotographyData(weatherCondition == "sunny", depthOfField == "macro", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(100, "f/8", "1/200"));
+end
+
+rule "Sunny_Macro_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "sunny", depthOfField == "macro", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(200, "f/8", "1/200"));
+end
+
+rule "Sunny_Macro_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "sunny", depthOfField == "macro", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(400, "f/8", "1/200"));
+end
+
+rule "Sunny_Portrait_Static"
+    when
+        $data: PhotographyData(weatherCondition == "sunny", depthOfField == "portrait", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(100, "f/4", "1/200"));
+end
+
+rule "Sunny_Portrait_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "sunny", depthOfField == "portrait", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(200, "f/4", "1/200"));
+end
+
+rule "Sunny_Portrait_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "sunny", depthOfField == "portrait", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(400, "f/4", "1/200"));
+end
+
+rule "Sunny_Landscape_Static"
+    when
+        $data: PhotographyData(weatherCondition == "sunny", depthOfField == "landscape", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(100, "f/11", "1/100"));
+end
+
+rule "Sunny_Landscape_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "sunny", depthOfField == "landscape", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(200, "f/11", "1/100"));
+end
+
+rule "Sunny_Landscape_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "sunny", depthOfField == "landscape", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(400, "f/11", "1/100"));
+end
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+rule "Cloudy_Macro_Static"
+    when
+        $data: PhotographyData(weatherCondition == "cloudy", depthOfField == "macro", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(200, "f/5.6", "1/125"));
+end
+
+rule "Cloudy_Macro_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "cloudy", depthOfField == "macro", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(400, "f/5.6", "1/125"));
+end
+
+rule "Cloudy_Macro_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "cloudy", depthOfField == "macro", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(800, "f/5.6", "1/125"));
+end
+
+rule "Cloudy_Portrait_Static"
+    when
+        $data: PhotographyData(weatherCondition == "cloudy", depthOfField == "portrait", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(200, "f/4", "1/125"));
+end
+
+rule "Cloudy_Portrait_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "cloudy", depthOfField == "portrait", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(400, "f/4", "1/125"));
+end
+
+rule "Cloudy_Portrait_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "cloudy", depthOfField == "portrait", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(800, "f/4", "1/125"));
+end
+
+rule "Cloudy_Landscape_Static"
+    when
+        $data: PhotographyData(weatherCondition == "cloudy", depthOfField == "landscape", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(200, "f/8", "1/60"));
+end
+
+rule "Cloudy_Landscape_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "cloudy", depthOfField == "landscape", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(400, "f/8", "1/60"));
+end
+
+rule "Cloudy_Landscape_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "cloudy", depthOfField == "landscape", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(800, "f/8", "1/60"));
+end
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+rule "Rain_Macro_Static"
+    when
+        $data: PhotographyData(weatherCondition == "rain", depthOfField == "macro", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(400, "f/5.6", "1/60"));
+end
+
+rule "Rain_Macro_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "rain", depthOfField == "macro", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(800, "f/5.6", "1/60"));
+end
+
+rule "Rain_Macro_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "rain", depthOfField == "macro", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(1600, "f/5.6", "1/60"));
+end
+
+rule "Rain_Portrait_Static"
+    when
+        $data: PhotographyData(weatherCondition == "rain", depthOfField == "portrait", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(400, "f/4", "1/60"));
+end
+
+rule "Rain_Portrait_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "rain", depthOfField == "portrait", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(800, "f/4", "1/60"));
+end
+
+rule "Rain_Portrait_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "rain", depthOfField == "portrait", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(1600, "f/4", "1/60"));
+end
+
+rule "Rain_Landscape_Static"
+    when
+        $data: PhotographyData(weatherCondition == "rain", depthOfField == "landscape", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(400, "f/8", "1/30"));
+end
+
+rule "Rain_Landscape_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "rain", depthOfField == "landscape", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(800, "f/8", "1/30"));
+end
+
+rule "Rain_Landscape_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "rain", depthOfField == "landscape", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(1600, "f/8", "1/30"));
+end
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+rule "Nightfall_Macro_Static"
+    when
+        $data: PhotographyData(weatherCondition == "nightfall", depthOfField == "macro", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(1600, "f/5.6", "1/15"));
+end
+
+rule "Nightfall_Macro_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "nightfall", depthOfField == "macro", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(3200, "f/5.6", "1/15"));
+end
+
+rule "Nightfall_Macro_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "nightfall", depthOfField == "macro", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(6400, "f/5.6", "1/15"));
+end
+
+rule "Nightfall_Portrait_Static"
+    when
+        $data: PhotographyData(weatherCondition == "nightfall", depthOfField == "portrait", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(1600, "f/4", "1/15"));
+end
+
+rule "Nightfall_Portrait_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "nightfall", depthOfField == "portrait", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(3200, "f/4", "1/15"));
+end
+
+rule "Nightfall_Portrait_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "nightfall", depthOfField == "portrait", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(6400, "f/4", "1/15"));
+end
+
+rule "Nightfall_Landscape_Static"
+    when
+        $data: PhotographyData(weatherCondition == "nightfall", depthOfField == "landscape", subjectMovement == "static")
+    then
+        insert(new PhotoConfiguration(1600, "f/8", "1/8"));
+end
+
+rule "Nightfall_Landscape_SlightMovement"
+    when
+        $data: PhotographyData(weatherCondition == "nightfall", depthOfField == "landscape", subjectMovement == "slightMovement")
+    then
+        insert(new PhotoConfiguration(3200, "f/8", "1/8"));
+end
+
+rule "Nightfall_Landscape_RapidMovement"
+    when
+        $data: PhotographyData(weatherCondition == "nightfall", depthOfField == "landscape", subjectMovement == "rapidMovement")
+    then
+        insert(new PhotoConfiguration(6400, "f/8", "1/8"));
+end
