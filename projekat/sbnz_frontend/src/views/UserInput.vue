@@ -110,11 +110,13 @@
     <div class="right-section">
       <!-- Display received data -->
       <div v-if="receivedData">
-        <h1>Suggested properties for your condition:</h1>
+        <h1>Suggested properties for your conditions:</h1>
         <br/>
         <h2>Aperture: {{ receivedData.aperture }}</h2>
         <h2>Shutter Speed: {{ receivedData.shutterSpeed }}</h2>
         <h2>ISO: {{ receivedData.iso }}</h2>
+        <br/>
+        <button type="button" class="btn btn-custom  btn-lg btn-block" @click="handleReload">RESET</button>
       </div>
     </div>
 
@@ -170,6 +172,9 @@ export default {
 
         });
 
+    },
+    handleReload() {
+      location.reload();
     }
   },
 }
@@ -204,7 +209,6 @@ export default {
   align-items: center; */
   height: 100vh; /* Adjust the value if needed */
   overflow: hidden;
-  background: linear-gradient(to right, #F8B4FF, #C6F8FF);
   text-align: center; /* Center align the text within the left section */
 }
 .active {

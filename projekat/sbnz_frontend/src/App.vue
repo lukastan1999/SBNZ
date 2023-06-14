@@ -11,5 +11,8 @@ export default {
 </script>
 
 <style>
+body {
+  background: linear-gradient(to right, #F8B4FF, #C6F8FF);
+}
 /* Add global CSS styles here */
 </style>
